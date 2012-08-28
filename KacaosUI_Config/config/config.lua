@@ -125,6 +125,7 @@ C.misc = {
 	infobottom = false,								-- show infopanel at the bottom of you screen
 	datapanels = true,								-- enable 5 datapanels in topleft
 	repbar = false,									-- enable reputationbar
+	click2cast = true,								-- enable click2cast
 }
 
 C.auras = {
@@ -144,6 +145,7 @@ C.skin = {
 C.tooltip = {
 	ilvl = false,									-- activate ilvl in tooltip
 	talent = true,									-- enable talent in tooltip
+	reforge = true,									-- Show what is reforged in itemtooltip
 }
 
 C.nameplate = {

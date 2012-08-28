@@ -29,7 +29,7 @@ local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, c
 			"showParty", true,
 			"showRaid", true,
 			"showPlayer", true,
-			"showSolo", true,
+			"showSolo", false,
 			"xoffset",(3),
 			"yOffset", (0),
 			"point", point,
@@ -125,12 +125,10 @@ self.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 		ResurrectIcon:SetDrawLayer("OVERLAY", 7)
 		self.ResurrectIcon = ResurrectIcon
 		
-		if C["unitframes"].aggro == true then
-			table.insert(self.__elements, T.UpdateThreat)
-			self:RegisterEvent('PLAYER_TARGET_CHANGED', T.UpdateThreat)
-			self:RegisterEvent('UNIT_THREAT_LIST_UPDATE', T.UpdateThreat)
-			self:RegisterEvent('UNIT_THREAT_SITUATION_UPDATE', T.UpdateThreat)
-		end
+		table.insert(self.__elements, T.UpdateThreat)
+		self:RegisterEvent('PLAYER_TARGET_CHANGED', T.UpdateThreat)
+		self:RegisterEvent('UNIT_THREAT_LIST_UPDATE', T.UpdateThreat)
+		self:RegisterEvent('UNIT_THREAT_SITUATION_UPDATE', T.UpdateThreat)
 		
 --------------------------------------------------------------
 -- debuffs
