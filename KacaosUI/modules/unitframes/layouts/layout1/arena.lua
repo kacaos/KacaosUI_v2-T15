@@ -21,9 +21,10 @@ do
 			G.UnitFrames["Arena" .. i].Health:SetStatusBarTexture(C["media"].normTex)
 			G.UnitFrames["Arena" .. i].Health:SetFrameLevel( 5 )
 			G.UnitFrames["Arena" .. i].Health:AddBorder()
-			G.UnitFrames["Arena" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-			
+			G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+				
 		if( C["unitframes"].unicolor == true ) then
+			G.UnitFrames["Arena" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 			G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		end
 

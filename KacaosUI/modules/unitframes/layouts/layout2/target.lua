@@ -19,9 +19,10 @@ do
 	do
 		G.UnitFrames.Target.Health:Height(12)
 		G.UnitFrames.Target.Health:CreateBorder(false, true)
-		G.UnitFrames.Target.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+		G.UnitFrames.Target.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 		
 		if( C["unitframes"].unicolor == true ) then
+			G.UnitFrames.Target.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 			G.UnitFrames.Target.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		end
 		

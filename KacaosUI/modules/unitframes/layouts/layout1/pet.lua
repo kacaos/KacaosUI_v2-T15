@@ -27,10 +27,11 @@ do
 		G.UnitFrames.Pet.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Pet.Health:SetFrameLevel( 5 )
 		G.UnitFrames.Pet.Health:CreateBorder(false, true)
-		G.UnitFrames.Pet.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-		
+		G.UnitFrames.Pet.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+				
 		if( C["unitframes"].unicolor == true ) then
-			G.UnitFrames.Pet.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+			G.UnitFrames.Player.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+			G.UnitFrames.Player.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		end
 
 		G.UnitFrames.Pet.Name:Point("CENTER", 0, 0)

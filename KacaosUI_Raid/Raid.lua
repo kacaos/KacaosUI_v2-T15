@@ -85,9 +85,10 @@ self.Health.value:SetShadowOffset(0,0,0,0)
 self.Health:SetFrameLevel(1)
 
 
-self.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-		
+	self.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+	
 	if( C["unitframes"].unicolor == true ) then
+		self.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 		self.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 	end
 

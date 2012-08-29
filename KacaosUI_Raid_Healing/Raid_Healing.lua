@@ -81,9 +81,10 @@ self.Health.value:Point("TOP", self.Health, 0, -1)
 self.Health.value:SetFont(C.media.pixelfont, 8, "MONOCHROMEOUTLINE")
 self.Health.value:SetShadowOffset(0,0,0,0)
 
-self.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-		
+	self.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+	
 	if( C["unitframes"].unicolor == true ) then
+		self.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 		self.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 	end
 

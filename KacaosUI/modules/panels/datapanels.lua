@@ -119,31 +119,31 @@ T.DataTextTooltipAnchor = function(self)
 	local panel = self:GetParent()
 	local anchor = "ANCHOR_TOPRIGHT"
 	local xoff = 5
-	local yoff = 15
+	local yoff = 0
 	
 	if panel == data[i] then
-		anchor = "ANCHOR_TOPRIGHT"
-		yoff = 15
-		xoff = 5
+		anchor = "ANCHOR_TOPLEFT"
+		yoff = 0
+		xoff = 95
 	elseif panel == data1 then
 		anchor = "ANCHOR_BOTTOMRIGHT"
-		yoff = 15
+		yoff = 20
 		xoff = 5
 	elseif panel == data2 then
 		anchor = "ANCHOR_BOTTOMRIGHT"
-		yoff = 31
+		yoff = 36
 		xoff = 5
 	elseif panel == data3 then
 		anchor = "ANCHOR_BOTTOMRIGHT"
-		yoff = 47
+		yoff = 52
 		xoff = 5
 	elseif panel == data4 then
 		anchor = "ANCHOR_BOTTOMRIGHT"
-		yoff = 63
+		yoff = 68
 		xoff = 5
 	elseif panel == data5 then
 		anchor = "ANCHOR_BOTTOMRIGHT"
-		yoff = 79
+		yoff = 84
 		xoff = 5
 	end
 	return anchor, panel, xoff, yoff

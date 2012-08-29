@@ -22,10 +22,11 @@ do
 			G.UnitFrames["Boss"..i].Health:SetStatusBarTexture(C["media"].normTex)
 			G.UnitFrames["Boss"..i].Health:SetFrameLevel(5)
 			G.UnitFrames["Boss"..i].Health:CreateBorder(false, true) 
-			G.UnitFrames["Boss"..i].Health.bg:SetTexture(0.6, 0.6, 0.6)
-		
+			G.UnitFrames["Boss"..i].Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+				
 		if( C["unitframes"].unicolor == true ) then
-			G.UnitFrames["Boss"..i].Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+			G.UnitFrames["Boss" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+			G.UnitFrames["Boss" .. i].Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		end
 
 			G.UnitFrames["Boss"..i].Name:SetFont(C.media.pixelfont, 8, "MONOCHROMEOUTLINE")

@@ -20,9 +20,10 @@ do
 		G.UnitFrames.FocusTarget.Health:Height(12)
 		G.UnitFrames.FocusTarget.Health:SetFrameLevel(5)
 		G.UnitFrames.FocusTarget.Health:CreateBorder(false, true)
-		G.UnitFrames.FocusTarget.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-		
+		G.UnitFrames.FocusTarget.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+				
 		if( C["unitframes"].unicolor == true ) then
+			G.UnitFrames.FocusTarget.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 			G.UnitFrames.FocusTarget.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		end
 		
