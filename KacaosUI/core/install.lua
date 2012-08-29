@@ -14,8 +14,10 @@ TukuiPopupDialog1:SetFrameStrata("HIGH")
 -------------------------------------------
 -- move anchors
 -------------------------------------------
+if C.loot.lootframe == true then
 TukuiRollAnchor:ClearAllPoints()
 TukuiRollAnchor:Point("CENTER", UIParent, "CENTER", 0, 50)
+end
 
 G.ActionBars.BarExtra.Holder:ClearAllPoints()
 G.ActionBars.BarExtra.Holder:Point("CENTER", UIParent, "CENTER", 0, -500)
