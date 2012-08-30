@@ -7,8 +7,10 @@ if C.unitframes.style ~= 2 then return end
 --------------------------------------------------------------
 do
 	do
+	if not T.lowversion then
 		G.UnitFrames.TargetTarget.shadow:Kill()
 		G.UnitFrames.TargetTarget.panel:Kill()
+	end
 	end
 	
 --------------------------------------------------------------
