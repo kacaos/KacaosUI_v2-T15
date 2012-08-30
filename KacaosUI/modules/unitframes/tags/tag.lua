@@ -5,7 +5,7 @@ if not C.unitframes.enable == true then return end
 --------------------------------------------------------------
 -- target name
 --------------------------------------------------------------
-	G.UnitFrames.Target:Tag(G.UnitFrames.Target.Name, "[Tukui:getnamecolor][Tukui:nameshort] [Tukui:diffcolor][level]")
+	G.UnitFrames.Target:Tag(G.UnitFrames.Target.Name, "[Tukui:getnamecolor][Tukui:namemini] [Tukui:diffcolor][level]")
 
 --------------------------------------------------------------
 -- pet name
@@ -15,4 +15,4 @@ if not C.unitframes.enable == true then return end
 --------------------------------------------------------------
 -- tot name
 --------------------------------------------------------------
-	G.UnitFrames.TargetTarget:Tag(G.UnitFrames.TargetTarget.Name, "[Tukui:getnamecolor][Tukui:nameshort]")
+	G.UnitFrames.TargetTarget:Tag(G.UnitFrames.TargetTarget.Name, "[Tukui:getnamecolor][Tukui:namemini]")

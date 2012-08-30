@@ -12,10 +12,12 @@ else
 
 do
 	do
+	if not T.lowversion then
 		G.UnitFrames.TargetTarget:SetBackdrop( nil )
 		G.UnitFrames.TargetTarget:SetBackdropColor( 0, 0, 0 )
 		G.UnitFrames.TargetTarget.shadow:Kill()
 		G.UnitFrames.TargetTarget.panel:Kill()
+	end
 	end
 
 --------------------------------------------------------------

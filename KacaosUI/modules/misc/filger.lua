@@ -180,7 +180,7 @@ ns.Filger_Spells = {
 	["SHAMAN"] = { -------------------------------------------------------------------------------------------------------- Shaman
 		{
 			Name = "Shaman Procs",
-			Direction = C.filger.procs,
+			Direction = C.filger.proccs,
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "LEFT", FilgerPlayerProccsMover, "LEFT", 0, 0 },
