@@ -47,14 +47,16 @@ T.PostUpdateRaidUnit = function( self )
 -- kill some frames
 self.panel:Kill()
 
-self.panel:Kill()
-local panel = CreateFrame("Frame", nil, self)
-panel:SetTemplate()
-panel:Point("TOPRIGHT", self, "TOPRIGHT", 1, 1)
-panel:Point("BOTTOMLEFT", self, "BOTTOMLEFT", -1, -1)
-panel:SetFrameLevel(2)
-panel:SetFrameStrata("MEDIUM")
-self.panel = panel
+	local panel = CreateFrame("Frame", nil, self)
+	panel:SetTemplate("Transparent")
+	panel:Point("TOPRIGHT", self, "TOPRIGHT", 1, 1)
+	panel:Point("BOTTOMLEFT", self, "BOTTOMLEFT", -1, -1)
+	panel:Size(60, 45)
+	panel:SetFrameLevel(2)
+	panel:SetFrameStrata("HIGH")
+	panel:SetBackdropColor(0,0,0,0)
+	panel:SetBackdropBorderColor(0,0,0,0)
+	self.panel = panel
 
 self:SetFrameLevel(1)
 
@@ -150,10 +152,11 @@ self.Power:SetFrameLevel(8)
 		self:RegisterEvent("PARTY_MEMBERS_CHANGED", T.MLAnchorUpdate)
 		
 		local LFDRole = self.Health:CreateTexture( nil, "OVERLAY" )
-		LFDRole:Height(5)
-		LFDRole:Width(5)
-		LFDRole:Point("TOPLEFT", 0, 0)
-		LFDRole:SetTexture( "Interface\\AddOns\\Tukui\\medias\\textures\\lfdicons.blp" )
+		LFDRole:Height(15)
+		LFDRole:Width(15)
+		LFDRole:Point("TOPLEFT", 1, 1)
+		LFDRole.Override = T.RoleIconUpdate
+		self:RegisterEvent("UNIT_CONNECTION", T.RoleIconUpdate)
 		self.LFDRole = LFDRole
 
 		local Resurrect = CreateFrame( "Frame", nil, self.Health )
@@ -190,22 +193,6 @@ self.Power:SetFrameLevel(8)
 	end
 end
 
---------------------------------------------------------------
--- only show 5 groups in raid (25 mans raid)
---------------------------------------------------------------
-local MaxGroup = CreateFrame("Frame")
-MaxGroup:RegisterEvent("PLAYER_ENTERING_WORLD")
-MaxGroup:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-MaxGroup:SetScript("OnEvent", function(self)
-	local inInstance, instanceType = IsInInstance()
-	local _, _, _, _, maxPlayers, _, _ = GetInstanceInfo()
-	if inInstance and instanceType == "raid" and maxPlayers ~= 40 then
-		G.UnitFrames.RaidUnits:SetAttribute("groupFilter", "1,2,3,4,5")
-	else
-		G.UnitFrames.RaidUnits:SetAttribute("groupFilter", "1,2,3,4,5,6,7,8")
-	end
-end)
-
 ---------------------------------------------------------------
 -- Raidposition
 ---------------------------------------------------------------
@@ -215,5 +202,5 @@ RaidPosition:SetScript("OnEvent", function(self, event)
 	local raid = G.UnitFrames.RaidUnits
 	local pets = G.UnitFrames.RaidPets
 	raid:ClearAllPoints()
-	raid:SetPoint("CENTER", UIParent, "CENTER", -500, -135)
+	raid:SetPoint("CENTER", UIParent, "CENTER", -515, -125)
 end)

@@ -7,7 +7,7 @@ local ebWidth = C.classbar.ebwidth
 -------------------------------------
 -- mover
 -------------------------------------
-local mover = CreateFrame("Frame", "tbMover", TukuiBar1)
+local mover = CreateFrame("Frame", "tbMover", UIParent)
 mover:Width(tbWidth)
 mover:Height(tbHeight+3)
 mover:Point("BOTTOM", UIParent, "CENTER", 1, -250)
@@ -301,28 +301,46 @@ if T.myclass == "MONK" then
 
 if( T.myclass == "PALADIN" ) then
 				if( C.classbar.paladin ~= true ) then
-					G.UnitFrames.Player.HolyPower:Kill()
-					for i = 1, 5 do
-						G.UnitFrames.Player.HolyPower[i]:Kill()
-					end
-				else	
-					G.UnitFrames.Player.HolyPower:ClearAllPoints()
-					G.UnitFrames.Player.HolyPower:SetPoint("CENTER", mover)
-					G.UnitFrames.Player.HolyPower:Size((tbWidth*5)+4, tbHeight)
-					G.UnitFrames.Player.HolyPower:SetFrameStrata("LOW")
-					G.UnitFrames.Player.HolyPower:CreateBorder(false, true)
-					for i = 1, 5  do
-							G.UnitFrames.Player.HolyPower[i]:SetStatusBarColor( 228 / 255, 225 / 255, 16 / 255 )
-						if i == 1 then
-							G.UnitFrames.Player.HolyPower[i]:Point("TOPLEFT", G.UnitFrames.Player.HolyPower, "BOTTOMLEFT", 0, tbHeight)
-							G.UnitFrames.Player.HolyPower[i]:Size(tbWidth, tbHeight)
-						else
-							G.UnitFrames.Player.HolyPower[i]:Point("LEFT", G.UnitFrames.Player.HolyPower[i-1], "RIGHT", 1, 0)
-							G.UnitFrames.Player.HolyPower[i]:Size(tbWidth, tbHeight)
+						G.UnitFrames.Player.HolyPower:Kill()
+						for i = 1, 5 do
+							G.UnitFrames.Player.HolyPower[i]:Kill()
 						end
-					end	
+				else	
+						if T.level == MAX_PLAYER_LEVEL then
+						G.UnitFrames.Player.HolyPower:ClearAllPoints()
+						G.UnitFrames.Player.HolyPower:SetPoint("CENTER", mover)
+						G.UnitFrames.Player.HolyPower:Size((tbWidth*5)+4, tbHeight)
+						G.UnitFrames.Player.HolyPower:SetFrameStrata("LOW")
+						G.UnitFrames.Player.HolyPower:CreateBorder(false, true)
+						for i = 1, 5  do
+								G.UnitFrames.Player.HolyPower[i]:SetStatusBarColor( 228 / 255, 225 / 255, 16 / 255 )
+							if i == 1 then
+								G.UnitFrames.Player.HolyPower[i]:Point("TOPLEFT", G.UnitFrames.Player.HolyPower, "BOTTOMLEFT", 0, tbHeight)
+								G.UnitFrames.Player.HolyPower[i]:Size(tbWidth, tbHeight)
+							else
+								G.UnitFrames.Player.HolyPower[i]:Point("LEFT", G.UnitFrames.Player.HolyPower[i-1], "RIGHT", 1, 0)
+								G.UnitFrames.Player.HolyPower[i]:Size(tbWidth, tbHeight)
+							end
+						end	
+				else
+						G.UnitFrames.Player.HolyPower:ClearAllPoints()
+						G.UnitFrames.Player.HolyPower:SetPoint("CENTER", mover)
+						G.UnitFrames.Player.HolyPower:Size((tbWidth*3)+2, tbHeight)
+						G.UnitFrames.Player.HolyPower:SetFrameStrata("LOW")
+						G.UnitFrames.Player.HolyPower:CreateBorder(false, true)
+						for i = 1, 3 do
+							G.UnitFrames.Player.HolyPower[i]:SetStatusBarColor( 228 / 255, 225 / 255, 16 / 255 )
+							if i == 1 then
+								G.UnitFrames.Player.HolyPower[i]:Point("TOPLEFT", G.UnitFrames.Player.HolyPower, "BOTTOMLEFT", 0, tbHeight)
+								G.UnitFrames.Player.HolyPower[i]:Size(tbWidth, tbHeight)
+							else
+								G.UnitFrames.Player.HolyPower[i]:Point("LEFT", G.UnitFrames.Player.HolyPower[i-1], "RIGHT", 1, 0)
+								G.UnitFrames.Player.HolyPower[i]:Size(tbWidth, tbHeight)
+							end
+						end
+					end
 				end
-			end
+end
 			
 ----------------------------------------
 -- Rogue

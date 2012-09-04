@@ -72,6 +72,7 @@ C.unitframes = {
 	
 	mouseoverhighlight = true,						-- mouseoverhiglight on raidframe
 	showraidpets = false,							-- enable raidpets
+	maxraidplayer= true,							-- Max raid frames displayed according to instance max players
 	
 	healthBgColor = { .5, 0.1, 0.1 },				-- choose healthbackground colors
 }

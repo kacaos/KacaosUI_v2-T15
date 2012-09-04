@@ -153,6 +153,21 @@ G.ActionBars.ExitVehicleLeft.text:SetText("X")
 -- kill the right exit button
 TukuiExitVehicleButtonRight:Kill()
 
+----------------------------------------------------------
+-- BNToastframe Mover
+----------------------------------------------------------
+local tfmover = CreateFrame("Frame", "BNToastframeMover", UIParent, "SecureHandlerStateTemplate")
+tfmover:Size(BNToastFrame:GetWidth(), BNToastFrame:GetHeight())
+tfmover:Point("BOTTOMLEFT", ChatBackgroundLeft, "BOTTOMRIGHT", 18, 0)
+tfmover:SetTemplate("Transparent")
+tfmover:SetBackdropBorderColor(1,0,0)
+tfmover:SetClampedToScreen(true)
+tfmover:SetMovable(true)
+tfmover:Hide()
+tfmover:FontString("Text", C.media.font, 12)
+tfmover.Text:SetPoint("CENTER", BNToastframeMover, "CENTER", 0, 0)
+tfmover.Text:SetText("Move BNToastframe")
+tinsert(T.AllowFrameMoving, tfmover)
 ------------------------------------------------------------
 --Filger Panels
 ------------------------------------------------------------

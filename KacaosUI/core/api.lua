@@ -41,6 +41,28 @@ oUF.Tags.Methods['Tukui:namemini'] = function(unit)
 	local name = UnitName(unit)
 	return utf7sub(name, 10, false)
 end
+-----------------------------------------------------
+-- New roleicon
+-----------------------------------------------------
+T.RoleIconUpdate = function(self, event)
+	local lfdrole = self.LFDRole
+
+	local role = UnitGroupRolesAssigned(self.unit)
+
+	if(role == 'TANK' or role == 'HEALER' or role == 'DAMAGER') and UnitIsConnected(self.unit) then
+		if role == 'TANK' then
+		lfdrole:SetTexture([[Interface\AddOns\KacaosUI\media\textures\tank.tga]])
+	elseif role == 'HEALER' then
+		lfdrole:SetTexture([[Interface\AddOns\KacaosUI\media\textures\healer.tga]])
+	elseif role == 'DAMAGER' then
+		lfdrole:SetTexture([[Interface\AddOns\KacaosUI\media\textures\dps.tga]])
+	end
+
+		lfdrole:Show()
+	else
+		lfdrole:Hide()
+	end	
+end
 --------------------------------------------------------
 -- Api
 --------------------------------------------------------

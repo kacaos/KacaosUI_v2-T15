@@ -36,7 +36,7 @@ local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, c
 			"groupFilter", "1,2,3,4,5,6,7,8",
 			"groupingOrder", "1,2,3,4,5,6,7,8",
 			"groupBy", "GROUP",
-			"maxColumns", 5,
+			"maxColumns", 8,
 			"unitsPerColumn", 5,
 			"columnSpacing", T.Scale(3),
 			"columnAnchorPoint", columnAnchorPoint
@@ -46,22 +46,26 @@ end
 T.PostUpdateRaidUnit = function( self )
 		
 -- kill some frames
-self.panel:Kill()
-self.Power:Kill()
-self.RaidDebuffs:Kill()
-self.AuraWatch:Kill()
-self.panel:Kill()
-local panel = CreateFrame("Frame", nil, self)
-panel:SetTemplate()
-panel:Point("TOPRIGHT", self, "TOPRIGHT", 1, 1)
-panel:Point("BOTTOMLEFT", self, "BOTTOMLEFT", -1, -1)
-panel:SetFrameLevel(2)
-panel:SetFrameStrata("MEDIUM")
-self.panel = panel
+	self.panel:Kill()
+	self.Power:Kill()
+	self.RaidDebuffs:Kill()
+	self.AuraWatch:Kill()
+	self.panel:Kill()
+	
+	local panel = CreateFrame("Frame", nil, self)
+	panel:SetTemplate("Transparent")
+	panel:Point("TOPRIGHT", self, "TOPRIGHT", 1, 1)
+	panel:Point("BOTTOMLEFT", self, "BOTTOMLEFT", -1, -1)
+	panel:Size(60, 20)
+	panel:SetFrameLevel(2)
+	panel:SetFrameStrata("HIGH")
+	panel:SetBackdropColor(0,0,0,0)
+	panel:SetBackdropBorderColor(0,0,0,0)
+	self.panel = panel
 
-self:SetFrameLevel(1)
+	self:SetFrameLevel(1)
 
-self:HighlightUnit(1,1,1,1)
+	self:HighlightUnit(1,1,1,1)
 
 ------------------------------------------------------
 -- names
@@ -110,10 +114,11 @@ self.Health:SetFrameLevel(1)
 		self:RegisterEvent("PARTY_MEMBERS_CHANGED", T.MLAnchorUpdate)
 
 		local LFDRole = self.Health:CreateTexture( nil, "OVERLAY" )
-		LFDRole:Height(5)
-		LFDRole:Width(5)
-		LFDRole:Point("TOPLEFT", 0, 0)
-		LFDRole:SetTexture( "Interface\\AddOns\\Tukui\\medias\\textures\\lfdicons.blp" )
+		LFDRole:Height(10)
+		LFDRole:Width(10)
+		LFDRole:Point("TOPLEFT", -1, 1)
+		LFDRole.Override = T.RoleIconUpdate
+		self:RegisterEvent("UNIT_CONNECTION", T.RoleIconUpdate)
 		self.LFDRole = LFDRole
 
 		local Resurrect = CreateFrame( "Frame", nil, self.Health )
@@ -183,7 +188,6 @@ self.Health:SetFrameLevel(1)
 		end)
 	end
 end
-
 
 ---------------------------------------------------------------
 -- Raidposition

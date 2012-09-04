@@ -4,6 +4,8 @@ if C.skin.dbmreskin ~= true then return end
 ----------------------------------------------------------------------------------------
 --	DBM skin(by Affli)
 ----------------------------------------------------------------------------------------
+local color = RAID_CLASS_COLORS[T.myclass]
+
 local forcebosshealthclasscolor = false		-- Forces BossHealth to be classcolored. Not recommended.
 local croprwicons = true					-- Crops blizz shitty borders from icons in RaidWarning messages
 local rwiconsize = 13						-- RaidWarning icon size. Works only if croprwicons = true

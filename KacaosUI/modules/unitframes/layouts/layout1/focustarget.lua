@@ -59,6 +59,13 @@ do
 			G.UnitFrames.FocusTarget.Castbar:SetHeight( 9 )
 			G.UnitFrames.FocusTarget.Castbar:Point( "TOPLEFT", G.UnitFrames.FocusTarget, "BOTTOMLEFT", 0, -9 )
 			G.UnitFrames.FocusTarget.Castbar:AddBorder()
+			
+			G.UnitFrames.FocusTarget.Castbar.bg:Kill()
+			
+			G.UnitFrames.FocusTarget.Castbar.bg = G.UnitFrames.FocusTarget.Castbar:CreateTexture( nil, "BORDER" )
+			G.UnitFrames.FocusTarget.Castbar.bg:SetAllPoints( G.UnitFrames.FocusTarget.Castbar )
+			G.UnitFrames.FocusTarget.Castbar.bg:SetTexture( C["media"].normTex)
+			G.UnitFrames.FocusTarget.Castbar.bg:SetVertexColor( 0.05, 0.05, 0.05 )
 
 			G.UnitFrames.FocusTarget.Castbar.Time = T.SetFontString( G.UnitFrames.FocusTarget.Castbar,C.media.pixelfont, 8, "MONOCHROMEOUTLINE")
 			G.UnitFrames.FocusTarget.Castbar.Time:Point( "RIGHT", G.UnitFrames.FocusTarget.Castbar, "RIGHT", -4, 0)

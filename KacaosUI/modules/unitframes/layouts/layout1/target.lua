@@ -19,7 +19,7 @@ do
 --------------------------------------------------------------
 	do
 		G.UnitFrames.Target.Health:Height(20)
-		G.UnitFrames.Target.Health:SetFrameLevel(5)
+		G.UnitFrames.Target.Health:SetFrameLevel(4)
 		G.UnitFrames.Target.Health:AddBorder()
 		G.UnitFrames.Target.Power:ClearAllPoints()
 		G.UnitFrames.Target.Power:Point("BOTTOM", G.UnitFrames.Target.Health, 0,-5)
