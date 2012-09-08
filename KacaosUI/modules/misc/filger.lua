@@ -565,7 +565,7 @@ ns.Filger_Spells = {
 			-- Faerie Fire
 			{ spellID = 770, size = C.filger.iconsize, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
-		
+		{
 			Name = "Cooldown",
 			Direction = C.filger.cd,
 			Interval = 4,
@@ -581,6 +581,7 @@ ns.Filger_Spells = {
 			-- Force of Nature
 			{ spellID = 33831, size = C.filger.iconsize, filter = "CD" },
 		},
+	},
 
 	["HUNTER"] = { -------------------------------------------------------------------------------------------------------- Hunter
 		{

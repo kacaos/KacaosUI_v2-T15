@@ -41,8 +41,7 @@ local function StyleActionBarButton(self)
 	if name:match("MultiCast") or name:match("ExtraActionButton") then return end
 
     Icon:Point("TOPLEFT", 1, -1)
-	Icon:Point("BOTTOMRIGHT", -1, 1)
-	
+	Icon:Point("BOTTOMRIGHT", -1, 1)	
 end
 
 hooksecurefunc(T, "StyleActionBarButton", StyleActionBarButton)
